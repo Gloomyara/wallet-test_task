@@ -1,13 +1,13 @@
-package ru.antonovmikhail.wallettest_task;
+package ru.antonovmikhail;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WalletApplication {
+public class WalletApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WalletApplication.class, args);
+		SpringApplication.run(WalletApp.class, args);
 	}
 
 }

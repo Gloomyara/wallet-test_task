@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  wallet-service:
+    build: .
+    image: wallet_service_image
+    container_name: wallet_service_container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - wallets-db
+    restart: on-failure
+    environment:
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://wallets-db:5432/wallets
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+      
+  wallets-db:
+    image: postgres:14-alpine
+    container_name: wallets-postgres
+    volumes:
+      - /var/lib/postgresql/data/
+    ports:
+      - "6542:5432"
+    restart: on-failure
+    environment:
+      - POSTGRES_DB=wallets
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
