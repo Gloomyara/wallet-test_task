@@ -1,4 +1,15 @@
 # wallet-test_task
+
+## Стек Технологий
+- Java 17
+- Maven 3.9.6
+- Spring Boot 3.2.4
+- Spring Data
+- PostgreSQl
+- MapStruct
+- Lombok
+- Docker
+
 ## Сборка
 1. Клонируйте репозиторий:
 ```Bash
