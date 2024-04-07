@@ -23,5 +23,8 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+        <rollback>
+            <dropTable tableName="WALLETS"/>
+        </rollback>
     </changeSet>
 </databaseChangeLog>
