@@ -41,6 +41,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 
@@ -79,8 +80,14 @@
 			<artifactId>mapstruct</artifactId>
 			<version>1.5.3.Final</version>
 		</dependency>
-	</dependencies>
 
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+			<version>${liquibase.version}</version>
+		</dependency>
+
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -93,6 +100,14 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>${liquibase.version}</version>
+				<configuration>
+					<propertyFile>/src/main/resources/db/liquibase.properties</propertyFile>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -132,6 +147,7 @@
 						<dependency>
 							<groupId>org.postgresql</groupId>
 							<artifactId>postgresql</artifactId>
+							<version>${postgresql.version}</version>
 						</dependency>
 					</dependencies>
 				</plugin>

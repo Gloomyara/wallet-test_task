@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <!-- We add a new feature to the application that requires a database change, we can create a new changelog file,
+         add it to version control, and include it in the master changelog-->
+    <include file="db/changelog/changes/change_set1.xml"/>
+</databaseChangeLog>
